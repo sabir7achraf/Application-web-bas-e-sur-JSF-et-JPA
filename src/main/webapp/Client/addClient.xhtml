@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+    <title>Ajouter un Internaut</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+</h:head>
+<h:body class="container mt-5">
+    <h:form>
+        <h1 class="text-center mb-4">Ajouter un Internaut</h1>
+
+        <!-- Champ Nom -->
+        <div class="form-group">
+            <h:outputLabel for="nom" value="Nom :" class="form-label" />
+            <h:inputText id="nom" value="#{internautBeans.name}" required="true" requiredMessage="Le nom est obligatoire." class="form-control" />
+            <h:message for="nom" style="color: red;" />
+        </div>
+
+        <!-- Champ Téléphone -->
+        <div class="form-group">
+            <h:outputLabel for="tele" value="Téléphone :" class="form-label" />
+            <h:inputText id="tele" value="#{internautBeans.numTele}" required="true" requiredMessage="Le numéro de téléphone est obligatoire." class="form-control" />
+            <h:message for="tele" style="color: red;" />
+        </div>
+
+        <!-- Bouton Ajouter -->
+        <h:commandButton value="Ajouter" action="#{internautBeans.ajouteInternaut()}" styleClass="btn btn-primary" />
+
+        <!-- Message global -->
+        <h:messages class="text-danger mt-3" />
+    </h:form>
+</h:body>
+</html>

@@ -1,0 +1,136 @@
+/* Style général */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+.page-title {
+    color: #6c757d;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Formulaires */
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.edit-form {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+}
+
+.form-title {
+    color: #6c757d;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form-message {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Tableau des données */
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.data-table th, .data-table td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #dee2e6;
+}
+
+.data-table th {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.data-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.data-table tr:hover {
+    background-color: #d6e9f5;
+}
+
+/* Boutons */
+.btn {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+.btn-save {
+    background-color: #28a745;
+    color: white;
+}
+
+.btn-cancel {
+    background-color: #dc3545;
+    color: white;
+}
+
+.btn-edit {
+    background-color: #ffc107;
+    color: white;
+}
+
+.btn-delete {
+    background-color: #dc3545;
+    color: white;
+}
+
+.link-button {
+    display: inline-block;
+    color: #007bff;
+    text-decoration: none;
+    margin-bottom: 20px;
+}
+
+.link-button:hover {
+    text-decoration: underline;
+}

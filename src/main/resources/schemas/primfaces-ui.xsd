@@ -1,0 +1,5 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://primefaces.org/ui"
+           xmlns="http://primefaces.org/ui"
+           elementFormDefault="qualified">
+</xs:schema>

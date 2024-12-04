@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+    <title>Gestion des Produits</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+</h:head>
+<h:body class="container mt-5">
+    <h:form id="productForm">
+        <h1 class="text-center mb-4">Liste des Produits</h1>
+
+        <!-- Cards des produits -->
+        <div class="d-flex justify-content-end mb-4">
+            <h:link value="Ajouter un produit" outcome="addProduit.xhtml" styleClass="btn btn-primary" />
+        </div>
+
+        <div class="row">
+            <ui:repeat value="#{produitBeans.lister()}" var="produit">
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">#{produit.nom}</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Prix : #{produit.prix} €</h6>
+                            <p class="card-text">#{produit.description}</p>
+                            <!-- Boutons d'actions -->
+                            <div class="d-flex gap-2">
+                                <h:commandButton value="Modifier" action="#{produitBeans.chargerProduit(produit)}" styleClass="btn btn-warning btn-sm" />
+                                <h:commandButton value="Supprimer" action="#{produitBeans.deleteProduit(produit)}" styleClass="btn btn-danger btn-sm" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ui:repeat>
+        </div>
+
+        <!-- Formulaire de modification -->
+        <h:panelGroup rendered="#{not empty produitBeans.produitSelectionne}">
+            <h2 class="mt-4">Modifier un Produit</h2>
+
+            <div class="form-group">
+                <h:outputLabel for="nom" value="Nom :" class="form-label" />
+                <h:inputText id="nom" value="#{produitBeans.produitSelectionne.nom}" class="form-control" />
+                <h:message for="nom" style="color: red;" />
+            </div>
+
+            <div class="form-group">
+                <h:outputLabel for="prix" value="Prix :" class="form-label" />
+                <h:inputText id="prix" value="#{produitBeans.produitSelectionne.prix}" class="form-control" />
+                <h:message for="prix" style="color: red;" />
+            </div>
+
+            <div class="form-group">
+                <h:outputLabel for="description" value="Description :" class="form-label" />
+                <h:inputText id="description" value="#{produitBeans.produitSelectionne.description}" class="form-control" />
+                <h:message for="description" style="color: red;" />
+            </div>
+
+            <div class="d-flex gap-2">
+                <h:commandButton value="Enregistrer" action="#{produitBeans.modifierProduit}" styleClass="btn btn-success" />
+                <h:commandButton value="Annuler" action="#{produitBeans.annuler()}" immediate="true" styleClass="btn btn-secondary" />
+            </div>
+        </h:panelGroup>
+    </h:form>
+</h:body>
+</html>
